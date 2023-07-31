@@ -1,10 +1,9 @@
 package com.xzy.abst.factory.patterns;
 
-import com.xzy.abst.factory.patterns.factory.ConcreteFactory1;
-import com.xzy.abst.factory.patterns.factory.ConcreteFactory2;
-import com.xzy.abst.factory.patterns.factory.Factory;
-import com.xzy.abst.factory.patterns.product.ProductA;
-import com.xzy.abst.factory.patterns.product.ProductB;
+import com.xzy.abst.factory.patterns.factory.AnimalFactory;
+import com.xzy.abst.factory.patterns.factory.CatFactory;
+import com.xzy.abst.factory.patterns.factory.DogFactory;
+import com.xzy.abst.factory.patterns.product.Animal;
 
 /**
  * 客户端
@@ -14,16 +13,26 @@ import com.xzy.abst.factory.patterns.product.ProductB;
  */
 public class Client {
     public static void main(String[] args) {
-        Factory factory1 = new ConcreteFactory1();
-        ProductA productA1 = factory1.createProductA();
-        productA1.doSomething();
-        ProductB productB1 = factory1.createProductB();
-        productB1.doSomething();
+        // 创建狗工厂
+        AnimalFactory dogFactory = new DogFactory();
 
-        Factory factory2 = new ConcreteFactory2();
-        ProductA productA2 = factory2.createProductA();
-        productA2.doSomething();
-        ProductB productB2 = factory2.createProductB();
-        productB2.doSomething();
+        // 创建小狗和大狗
+        Animal smallDog = dogFactory.createSmallAnimal();
+        Animal bigDog = dogFactory.createBigAnimal();
+
+        // 使它们发出声音
+        smallDog.makeSound(); // 输出：Small Dog: Woof!
+        bigDog.makeSound();   // 输出：Big Dog: Woof Woof!
+
+        // 创建猫工厂
+        AnimalFactory catFactory = new CatFactory();
+
+        // 创建小猫和大猫
+        Animal smallCat = catFactory.createSmallAnimal();
+        Animal bigCat = catFactory.createBigAnimal();
+
+        // 使它们发出声音
+        smallCat.makeSound(); // 输出：Small Cat: Meow!
+        bigCat.makeSound();   // 输出：Big Cat: Roar!
     }
 }
