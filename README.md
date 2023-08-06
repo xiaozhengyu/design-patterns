@@ -233,7 +233,11 @@
 
 ### 3.4 模板方法模式
 
-模板方法模式（Template Method Pattern）
+模板方法模式（Template Method Pattern）主要用于定义一个算法的框架，同时允许子类在不改变算法结构的情况下重新定义算法的某些步骤。这种模式有助于促进代码的重用和灵活性。
+
+模板方法模式的核心思想是将一个算法分解为一系列步骤，其中某些步骤可以由子类实现。
+
+>   Spring中AbstractApplicationContext类的refresh方法就应用了模板方法模式
 
 
 
