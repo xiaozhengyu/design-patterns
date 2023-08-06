@@ -238,9 +238,3 @@
 模板方法模式的核心思想是将一个算法分解为一系列步骤，其中某些步骤可以由子类实现。
 
 >   Spring中AbstractApplicationContext类的refresh方法就应用了模板方法模式
-
-
-
-### 3.5 迭代器模式
-
-迭代器模式（Iterator Pattern）
